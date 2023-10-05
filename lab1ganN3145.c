@@ -72,6 +72,7 @@ int main(int argc, char *argv[]) {
 
     srand(time(NULL));
 
+    //Check if input is correct
     bool is_num = true;
     for(int i = 0; argc != 1 && i < (int)strlen(argv[1]); ++i){
         if(isdigit(argv[1][i]) == false){
