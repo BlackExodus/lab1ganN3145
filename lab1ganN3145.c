@@ -12,7 +12,7 @@
 void printDec2Bin(ull dec, int l){
     if(dec > 0){
         printDec2Bin(dec >> 1, l + 1);
-        if(l % 8 == 0)
+        if(l % 8 == 0 && l != 64)
             printf(" ");
         printf("%llu", dec&1);
     }
@@ -102,7 +102,6 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < 8; ++i){
         if(!change[i])
             continue;
-
         //I use double for to simplify code instead of two-pointer method.
         // We don't lose much asymptotic
         for(int j = 7; j > i; --j){
@@ -125,6 +124,6 @@ int main(int argc, char *argv[]) {
 
     return EXIT_SUCCESS;
 
-    error_number: printf("Ошибка: '%s' не является числом\n", argv[1]);
+    error_number: fprintf(stderr ,"Ошибка: '%s' не является числом\n", argv[1]);
     return EXIT_FAILURE;
 }
