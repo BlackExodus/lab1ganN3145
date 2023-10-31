@@ -102,8 +102,8 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < 8; ++i){
         if(!change[i])
             continue;
-        //I use double for to simplify code instead of two-pointer method.
-        // We don't lose much asymptotic
+        //I use "double for" to simplify code instead of "two-pointer" method,
+        //we don't lose much asymptotic
         for(int j = 7; j > i; --j){
             if(change[i] == change[j] && change[i] == 1){
                 unsigned char tmp = bytes[i];
@@ -114,10 +114,8 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-    //printBytes(bytes);
 
     n = convCharHex2Dec(bytes); //Convert new Bytes array to N
-    //printf("%llu\n", n);
 
     printDec2Bin(n, 1); //Print new N
     printf("\n");
